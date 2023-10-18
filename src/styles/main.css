@@ -70,7 +70,7 @@ body {
     list-style: none;
     margin-bottom: 8px;
 }
-.sd-body ul li .sd-link{
+.sd-body , .sd-link{
     display: inline-block;
     width: 100%;
     padding: 10px 16px;
@@ -78,8 +78,13 @@ body {
     background-color: #e5e8ec;
     border-radius: 4px;
     cursor: pointer;
+    user-select: none;
     text-decoration: none;
 }
+
+/* .sd-body{
+    background-color: white;
+} */
 
 .iconOuter{
     display: flex;
@@ -89,4 +94,27 @@ body {
     justify-content: center;
     
  
+}
+.navbarLi{
+    background-color: #d7e3f2;
+}
+.navbarLi li{
+    background-color: #d7e3f2;
+}
+
+.header{
+    position: relative;
+}
+.header .more-profile{
+    position: absolute;
+    right: 10px;
+    top: 46px;
+    background-color: #d7e3f2;
+    padding: 20px 25px;
+    user-select: none;
+}
+
+.more-profile li{
+    cursor: pointer;
+    padding-top: 4px;
 }
