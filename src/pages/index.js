@@ -52,7 +52,7 @@ const Login = () => {
           <div className="container">
 
             <div className="row justify-content-center">
-              <div className="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+              <div className="col-md-12 d-flex flex-column align-items-center justify-content-center">
 
 
                 <div className="card mb-3">
