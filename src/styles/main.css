@@ -95,6 +95,18 @@ body {
     
  
 }
+
+.iconOuter i{
+   font-size: 2.2rem;
+    color: white;
+}
+
+.navbar-brand-user i{
+    font-size: 3rem;
+}
+
+
+
 .navbarLi{
     background-color: #d7e3f2;
 }

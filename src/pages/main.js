@@ -16,10 +16,13 @@ const Main = () => {
                     <div className="container-fluid p-2 header">
 
                         <div className="btn btn-primary iconOuter" onClick={ToggleSidebar}  >
-                            <i class="gg-menu"></i>
+                            <i className="fa-solid fa-bars"></i>
+
                         </div>
 
-                        <a className="navbar-brand text-primary mr-0"><i class="gg-profile" onClick={() => { setProfile(!openProfile) }} style={{ cursor: "pointer" }}></i></a>
+                        <a className="navbar-brand-user text-primary mr-0">
+                            <i class="fa-solid fa-user-large" onClick={() => { setProfile(!openProfile) }} style={{ cursor: "pointer" }}></i>
+                        </a>
                         {openProfile &&
                             <div className="more-profile">
                                 <li>More Info </li>
@@ -32,7 +35,7 @@ const Main = () => {
                 <div className={`sidebar ${isOpen == true ? 'active' : ''}`}>
                     <div className="sd-header">
                         <h4 className="mb-0">Sidebar Header</h4>
-                        <div className="btn btn-primary iconOuter" onClick={ToggleSidebar}><i class="gg-move-left"></i></div>
+                        <div className="btn btn-primary iconOuter" onClick={ToggleSidebar}><i class="fa-solid fa-right-to-bracket fa-rotate-180"></i></div>
                     </div>
                     <div className="sd-body">
                         <ul>
@@ -55,14 +58,14 @@ const Main = () => {
                 <div className={`sidebar-overlay ${isOpen == true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
             </div>
 
-            <div className="container card-container">
-                <ItemCard/>
-                <ItemCard/>
+            <div className="card-container">
+                <ItemCard />
+                <ItemCard />
 
-                <ItemCard/>
-                <ItemCard/>
-                <ItemCard/>
-                <ItemCard/>
+                <ItemCard />
+                <ItemCard />
+                <ItemCard />
+                <ItemCard />
             </div>
         </>
     )
@@ -102,14 +105,16 @@ const ItemCard = () => {
     return (
         <>
             <div class="product-card">
-                <div class="product-img img-three"></div>
+
                 <div class="product-text">
-                    <h3>Madrid</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, laborum. Non maxime corrupti illo necessitatibus error vitae numquam perspiciatis culpa.</p>
+                    <h3>Loan From Supplier</h3>
+                    <h5>$400</h5>
+
+                    {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, laborum. Non maxime corrupti illo necessitatibus error vitae numquam perspiciatis culpa.</p> */}
                 </div>
-                <div class="product-cart">
+                {/* <div class="product-cart">
                     <button type="submit">Add to cart</button>
-                </div>
+                </div> */}
             </div>
         </>
     )

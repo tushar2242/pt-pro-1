@@ -31,8 +31,13 @@ p {
 
 /* PRODUCT CARD */
 .card-container {
+  width: 100%;
+  margin:auto;
+  display: flex;
   margin-top: 50px;
   flex-wrap: wrap;
+  row-gap: 1.5rem;
+
 }
 
 .product-card {
@@ -40,11 +45,15 @@ p {
   border-radius: 10px;
   color: #2f3640;
   margin: 0 2em;
+  /* row-gap: 1rem; */
   transition: all linear .2s;
-  width: 250px;
+  max-width: 250px;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+  /* align-items: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .product-card:hover,
