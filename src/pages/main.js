@@ -21,7 +21,7 @@ const Main = () => {
                         </div>
 
                         <a className="navbar-brand-user text-primary mr-0">
-                            <i class="fa-solid fa-user-large" onClick={() => { setProfile(!openProfile) }} style={{ cursor: "pointer" }}></i>
+                            <i className="fa-solid fa-user-large" onClick={() => { setProfile(!openProfile) }} style={{ cursor: "pointer" }}></i>
                         </a>
                         {openProfile &&
                             <div className="more-profile">
@@ -35,7 +35,7 @@ const Main = () => {
                 <div className={`sidebar ${isOpen == true ? 'active' : ''}`}>
                     <div className="sd-header">
                         <h4 className="mb-0">Sidebar Header</h4>
-                        <div className="btn btn-primary iconOuter" onClick={ToggleSidebar}><i class="fa-solid fa-right-to-bracket fa-rotate-180"></i></div>
+                        <div className="btn btn-primary iconOuter" onClick={ToggleSidebar}><i className="fa-solid fa-right-to-bracket fa-rotate-180"></i></div>
                     </div>
                     <div className="sd-body">
                         <ul>
@@ -104,15 +104,15 @@ const DropLi = ({ nav, navItems }) => {
 const ItemCard = () => {
     return (
         <>
-            <div class="product-card">
+            <div className="product-card">
 
-                <div class="product-text">
+                <div className="product-text">
                     <h3>Loan From Supplier</h3>
                     <h5>$400</h5>
 
                     {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, laborum. Non maxime corrupti illo necessitatibus error vitae numquam perspiciatis culpa.</p> */}
                 </div>
-                {/* <div class="product-cart">
+                {/* <div className="product-cart">
                     <button type="submit">Add to cart</button>
                 </div> */}
             </div>
