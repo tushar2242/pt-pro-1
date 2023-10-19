@@ -46,7 +46,7 @@ const Login = () => {
 
       <div className="login-container">
         <section className="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-          <div className="container">
+          <div className="container-1">
 
             <div className="row justify-content-center">
               <div className="col-md-12 d-flex flex-column align-items-center justify-content-center">
