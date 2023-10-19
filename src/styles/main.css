@@ -5,22 +5,27 @@ body {
     background-color: #e0e3e8;
     font-family: "Rubik", sans-serif;
 }
+
 /* ---Sidebar css */
-.text-primary{
-  color: #5a8dee!important;
+.text-primary {
+    color: #5a8dee !important;
 }
+
 .btn-primary {
     border-color: #5a8dee !important;
     background-color: #5a8dee !important;
     color: #fff;
 }
+
 .shadow-md {
     box-shadow: 0px 5px 10px rgba(90, 116, 148, 0.3);
 }
-.navbar{
-  border-radius: 5px;
+
+.navbar {
+    border-radius: 5px;
 }
-.sidebar{
+
+.sidebar {
     width: 280px;
     min-height: 100vh;
     box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
@@ -31,46 +36,55 @@ body {
     z-index: 1;
     transition: 0.5s;
 }
-.sidebar.active{
+
+.sidebar.active {
     left: 0;
 }
-.sd-header{
+
+.sd-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px;
 }
-.sidebar-overlay{
+
+.sidebar-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
 }
-.sidebar-overlay.active{
+
+.sidebar-overlay.active {
     opacity: 1;
     visibility: visible;
 }
-.sd-body{
+
+.sd-body {
     padding: 15px;
     max-height: calc(100vh - 67px);
     overflow-x: hidden;
 }
-.sd-body ul{
+
+.sd-body ul {
     display: inline-block;
     width: 100%;
     margin-bottom: 0;
     padding: 0;
 }
-.sd-body ul li{
+
+.sd-body ul li {
     list-style: none;
     margin-bottom: 8px;
 }
-.sd-body , .sd-link{
+
+.sd-body,
+.sd-link {
     display: inline-block;
     width: 100%;
     padding: 10px 16px;
@@ -86,38 +100,40 @@ body {
     background-color: white;
 } */
 
-.iconOuter{
+.iconOuter {
     display: flex;
     align-items: center;
     height: 40px;
     width: 50px;
     justify-content: center;
-    
- 
+
+
 }
 
-.iconOuter i{
-   font-size: 2.2rem;
+.iconOuter i {
+    font-size: 2.2rem;
     color: white;
 }
 
-.navbar-brand-user i{
+.navbar-brand-user i {
     font-size: 3rem;
 }
 
 
 
-.navbarLi{
-    background-color: #d7e3f2;
-}
-.navbarLi li{
+.navbarLi {
     background-color: #d7e3f2;
 }
 
-.header{
+.navbarLi li {
+    background-color: #d7e3f2;
+}
+
+.header {
     position: relative;
 }
-.header .more-profile{
+
+.header .more-profile {
     position: absolute;
     right: 10px;
     top: 46px;
@@ -126,7 +142,41 @@ body {
     user-select: none;
 }
 
-.more-profile li{
+.more-profile li {
     cursor: pointer;
     padding-top: 4px;
+}
+
+.form-control {
+    padding: 17px;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+/* context menu */
+
+.menuOuter i{
+    font-size: 5rem;
+    color: #475f7b;
+}
+
+.more-menu{
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    
+}
+
+.more-options{
+    z-index: 2000;
+    max-width: 100px;
+    width: 100%;
+    height: 200px;
+    border: solid 2px black;
+    position: absolute;
+    bottom: 100px;
 }

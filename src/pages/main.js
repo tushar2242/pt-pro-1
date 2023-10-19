@@ -67,6 +67,7 @@ const Main = () => {
                 <ItemCard />
                 <ItemCard />
             </div>
+            <ContextMenu />
         </>
     )
 }
@@ -119,3 +120,39 @@ const ItemCard = () => {
         </>
     )
 }
+
+
+const ContextMenu = () => {
+
+    const [isMenuOpened, setIsMenuOpened] = useState(false);
+
+
+    return (
+        <>
+            <div className="menuOuter">
+                <div className="more-menu" onClick={() => setIsMenuOpened(!isMenuOpened)}>
+                    <i class="fa-regular fa-square-plus"></i>
+                </div>
+
+                {isMenuOpened && <nav className="more-options">
+                    <div className="more-menu">
+                        <i class="fa-regular fa-square-plus"></i>
+                    </div>
+                    <div className="more-menu">
+                        <i class="fa-regular fa-square-plus"></i>
+                    </div>
+                    <div className="more-menu">
+                        <i class="fa-regular fa-square-plus"></i>
+                    </div>
+                    <div className="more-menu">
+                        <i class="fa-regular fa-square-plus"></i>
+                    </div>
+                </nav>}
+
+                {/* <div onClick={handleMenuClicked} className="contextMenu" /> */}
+
+
+            </div >
+        </>
+    );
+};

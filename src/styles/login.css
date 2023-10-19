@@ -17,7 +17,7 @@
 
 .card-title {
     padding: 20px 0 15px 0;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 500;
     color: #012970;
     font-family: "Poppins", sans-serif;
@@ -44,4 +44,18 @@
 
 .dmjlogo img {
     width: 200px;
+}
+.needs-validation label{
+    font-size: 1.6rem;
+}
+
+ input{
+
+    height: 40px;
+}
+
+.login-btn{
+
+    font-size: 1.4rem !important;
+    padding: 10px 20px !important;
 }
