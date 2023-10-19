@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 const Main = () => {
@@ -126,28 +126,32 @@ const ContextMenu = () => {
 
     const [isMenuOpened, setIsMenuOpened] = useState(false);
 
+    const toggleMenu = () => {
+        setIsMenuOpened(!isMenuOpened);
+    };
+
 
     return (
         <>
             <div className="menuOuter">
-                <div className="more-menu" onClick={() => setIsMenuOpened(!isMenuOpened)}>
-                    <i class="fa-regular fa-square-plus"></i>
-                </div>
+                <div className="more-menu" onClick={toggleMenu}>
+                    <i className="fa-regular fa-square-plus"></i>
+                </div >
 
                 {isMenuOpened && <nav className="more-options">
-                    <div className="more-menu">
-                        <i class="fa-regular fa-square-plus"></i>
-                    </div>
-                    <div className="more-menu">
-                        <i class="fa-regular fa-square-plus"></i>
-                    </div>
-                    <div className="more-menu">
-                        <i class="fa-regular fa-square-plus"></i>
-                    </div>
-                    <div className="more-menu">
-                        <i class="fa-regular fa-square-plus"></i>
-                    </div>
-                </nav>}
+                <section>
+                    <li>Create a New Sales</li>
+                    <li>Create Purchase Invoice</li>
+                    <li>Create New Item</li>
+                    <li>Create a New Customer</li>
+                    <li>Create a New Supplier</li>
+                    <li>Create New Return</li>
+                    <li>All Purchase Invoice</li>
+                    <li>All Sales Invoices</li>
+                </section>
+                    
+                </nav>
+                }
 
                 {/* <div onClick={handleMenuClicked} className="contextMenu" /> */}
 

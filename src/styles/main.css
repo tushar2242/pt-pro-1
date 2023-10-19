@@ -168,15 +168,23 @@ body {
     position: fixed;
     bottom: 40px;
     right: 25px;
+    z-index: 2001;
     
 }
 
 .more-options{
     z-index: 2000;
-    max-width: 100px;
-    width: 100%;
-    height: 200px;
-    border: solid 2px black;
-    position: absolute;
-    bottom: 100px;
+    border: solid 1px #475f7b;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 88px;
+    right: 25px;
+    list-style: none;
+    padding: 10px 15px;
+    background-color: #d7e3f2;
+}
+.more-options li{
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px;
 }
