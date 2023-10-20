@@ -4,9 +4,18 @@ import { Inter } from 'next/font/google';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import logo from '../images/logo.jpg'
+import axios from 'axios';
 // import styles from '@/styles/Home.module.css'
 
 // const inter = Inter({ subsets: ['latin'] })
+
+const loginurl = 'http://tgc67.online/api/method/login';
+
+const headers = {
+  "Content-Type": "multipart/form-data",
+};
+
+
 
 export default function Home() {
   // console.log(logo)
@@ -27,11 +36,27 @@ export default function Home() {
 
 const Login = () => {
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState('administrator');
+  const [password, setPassword] = useState('admin')
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
+    const formdata = new FormData()
+
+    formdata.append('usr', username)
+    formdata.append('pwd', password)
+
+    try {
+      const loginRes = await axios.post(loginurl, formdata, { headers })
+
+      console.log(loginRes)
+    }
+    catch (err) {
+      console.log(err)
+    }
+
+
+
   }
 
 

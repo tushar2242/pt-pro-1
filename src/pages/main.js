@@ -83,7 +83,9 @@ const DropLi = ({ nav, navItems }) => {
     return (
         <>
 
-            <li onClick={() => setIsNavOpen(!isNavOpen)} className="sd-link">{nav}</li>
+            <li onClick={() => setIsNavOpen(!isNavOpen)} className="sd-link">{nav}
+                {isNavOpen ? <i class="fa-solid fa-sort-up"></i> : <i class="fa-solid fa-sort-down"></i>}
+            </li>
             {
                 isNavOpen && navItems.length > 0 && navItems.map((item, i) => {
                     return (
@@ -139,17 +141,17 @@ const ContextMenu = () => {
                 </div >
 
                 {isMenuOpened && <nav className="more-options">
-                <section>
-                    <li>Create a New Sales</li>
-                    <li>Create Purchase Invoice</li>
-                    <li>Create New Item</li>
-                    <li>Create a New Customer</li>
-                    <li>Create a New Supplier</li>
-                    <li>Create New Return</li>
-                    <li>All Purchase Invoice</li>
-                    <li>All Sales Invoices</li>
-                </section>
-                    
+                    <section>
+                        <li>Create a New Sales</li>
+                        <li>Create Purchase Invoice</li>
+                        <li>Create New Item</li>
+                        <li>Create a New Customer</li>
+                        <li>Create a New Supplier</li>
+                        <li>Create New Return</li>
+                        <li>All Purchase Invoice</li>
+                        <li>All Sales Invoices</li>
+                    </section>
+
                 </nav>
                 }
 
