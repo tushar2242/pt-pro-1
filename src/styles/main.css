@@ -184,7 +184,8 @@ body {
     background-color: #d7e3f2;
 }
 .more-options li{
-    font-size: 2rem;
+    font-size: 1.7rem;
+    color: #223964;
     cursor: pointer;
     padding: 5px;
 }
