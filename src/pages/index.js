@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import logo from '../images/logo.jpg'
 import axios from 'axios';
+import { useRouter } from 'next/router';
 // import styles from '@/styles/Home.module.css'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -37,7 +37,8 @@ export default function Home() {
 const Login = () => {
 
   const [username, setUsername] = useState('administrator');
-  const [password, setPassword] = useState('admin')
+  const [password, setPassword] = useState('admin');
+  const route = useRouter()
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -49,7 +50,9 @@ const Login = () => {
     try {
       const loginRes = await axios.post(loginurl, formdata, { headers })
 
-      console.log(loginRes)
+      if (loginRes.message === 'Logged In') {
+        route('/main')
+      }
     }
     catch (err) {
       console.log(err)
@@ -63,7 +66,7 @@ const Login = () => {
   return (
     <>
 
-      <div className="login-container mt-5">
+      <div className="login-container mt-4">
 
 
         <div className="rown" style={{ overflow: 'hidden' }}>
@@ -82,7 +85,7 @@ const Login = () => {
                 </div>
                 <div className="pt-4 pb-2">
                   <h5 className="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                  <p className="text-center" style={{ fontSize: '1.3rem' }}>Enter your username & password to login</p>
+                  <p className="text-center" >Enter your username & password to login</p>
                 </div>
 
                 <form onSubmit={(e) => { handleLogin(e) }} method='post' className="row g-3 needs-validation" >
@@ -119,8 +122,8 @@ const Login = () => {
                   </div>
                   <br />
 
-                  <div className="col-12 w-100">
-                    <button className="btn btn-primary w-50 login-btn" type="submit">Login</button>
+                  <div className="w-100">
+                    <button className="btn btn-primary login-btn" type="submit">Login</button>
                   </div>
                   {/* <div className="col-12">
                         <p className="small mb-0">Don't have account? <Link to="/signup">Create an account</Link></p>

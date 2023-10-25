@@ -1,63 +1,12 @@
 import React, { useEffect, useState } from "react";
+import Siderbar from "./siderbar";
 
 
 const Main = () => {
-    const [isOpen, setIsopen] = useState(false);
-    const [openProfile, setProfile] = useState(false)
 
-    const ToggleSidebar = () => {
-        isOpen === true ? setIsopen(false) : setIsopen(true);
-    }
     return (
         <>
-            <div className="container-fluid mt-3">
-
-                <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-md">
-                    <div className="container-fluid p-2 header">
-
-                        <div className="btn btn-primary iconOuter" onClick={ToggleSidebar}  >
-                            <i className="fa-solid fa-bars"></i>
-
-                        </div>
-
-                        <a className="navbar-brand-user text-primary mr-0">
-                            <i className="fa-solid fa-user-large" onClick={() => { setProfile(!openProfile) }} style={{ cursor: "pointer" }}></i>
-                        </a>
-                        {openProfile &&
-                            <div className="more-profile">
-                                <li>More Info </li>
-                                <li>Login</li>
-                            </div>
-                        }
-
-                    </div>
-                </nav>
-                <div className={`sidebar ${isOpen == true ? 'active' : ''}`}>
-                    <div className="sd-header">
-                        <h4 className="mb-0">Sidebar Header</h4>
-                        <div className="btn btn-primary iconOuter" onClick={ToggleSidebar}><i className="fa-solid fa-right-to-bracket fa-rotate-180"></i></div>
-                    </div>
-                    <div className="sd-body">
-                        <ul>
-                            <DropLi
-                                nav='NavItem 1'
-                                navItems={[
-                                    "Item 1",
-                                    "item 2",
-                                    "item 3"
-                                ]}
-                            />
-                            <li className="sd-link" >Item 2</li>
-                            <li className="sd-link" >Item 3</li>
-                            <li className="sd-link" >Item 4</li>
-                            <li className="sd-link" >Item 5</li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div className={`sidebar-overlay ${isOpen == true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
-            </div>
-
+            <Siderbar />
             <div className="card-container">
                 <ItemCard />
                 <ItemCard />
@@ -67,40 +16,13 @@ const Main = () => {
                 <ItemCard />
                 <ItemCard />
             </div>
-            <ContextMenu />
+            {/* <ContextMenu /> */}
         </>
     )
 }
 
 export default Main
 
-
-
-const DropLi = ({ nav, navItems }) => {
-
-    const [isNavOpen, setIsNavOpen] = useState(false)
-
-    return (
-        <>
-
-            <li onClick={() => setIsNavOpen(!isNavOpen)} className="sd-link">{nav}
-                {isNavOpen ? <i class="fa-solid fa-sort-up"></i> : <i class="fa-solid fa-sort-down"></i>}
-            </li>
-            {
-                isNavOpen && navItems.length > 0 && navItems.map((item, i) => {
-                    return (
-                        <div key={i} className="navbarLi">
-
-                            <li className="sd-link" style={{ paddingLeft: '30px' }}>{item}</li>
-                        </div>
-                    )
-                })
-            }
-
-
-        </>
-    )
-}
 
 
 
@@ -110,8 +32,8 @@ const ItemCard = () => {
             <div className="product-card">
 
                 <div className="product-text">
-                    <h3>Loan From Supplier</h3>
-                    <h5>$400</h5>
+                    <h6>Loan From Supplier</h6>
+                    <p>$400</p>
 
                     {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, laborum. Non maxime corrupti illo necessitatibus error vitae numquam perspiciatis culpa.</p> */}
                 </div>
@@ -122,43 +44,3 @@ const ItemCard = () => {
         </>
     )
 }
-
-
-const ContextMenu = () => {
-
-    const [isMenuOpened, setIsMenuOpened] = useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpened(!isMenuOpened);
-    };
-
-
-    return (
-        <>
-            <div className="menuOuter">
-                <div className="more-menu" onClick={toggleMenu}>
-                    <i className="fa-regular fa-square-plus"></i>
-                </div >
-
-                {isMenuOpened && <nav className="more-options">
-                    <section>
-                        <li>Create a New Sales</li>
-                        <li>Create Purchase Invoice</li>
-                        <li>Create New Item</li>
-                        <li>Create a New Customer</li>
-                        <li>Create a New Supplier</li>
-                        <li>Create New Return</li>
-                        <li>All Purchase Invoice</li>
-                        <li>All Sales Invoices</li>
-                    </section>
-
-                </nav>
-                }
-
-                {/* <div onClick={handleMenuClicked} className="contextMenu" /> */}
-
-
-            </div >
-        </>
-    );
-};
