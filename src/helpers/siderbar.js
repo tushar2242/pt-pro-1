@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Siderbar = ({ children }) => {
 
@@ -119,7 +119,20 @@ const ContextMenu = () => {
     const handleRoutePage = (link) => {
         route.push(link)
     }
+  // Close the menu when a click occurs outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+        if (isMenuOpened && !event.target.closest(".menuOuter")) {
+            setIsMenuOpened(false);
+        }
+    };
 
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+        document.removeEventListener("click", handleClickOutside);
+    };
+}, [isMenuOpened]);
 
     return (
         <>
@@ -136,6 +149,7 @@ const ContextMenu = () => {
                         {/* <li>Create a New Customer</li>   */}
                         <li onClick={() => handleRoutePage('/supplier/newsupplier')}>Create a New Supplier</li>
                         <li>Create Purchase Invoice</li>
+                        <li onClick={() => handleRoutePage('/invoices')}>Create Sales Invoice</li>
                         <li>Create New Return</li>
                         <li>All Purchase Invoice</li>
                         <li>All Sales Invoices</li>

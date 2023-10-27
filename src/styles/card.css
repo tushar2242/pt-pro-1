@@ -122,6 +122,13 @@ p {
   background-color: #0097e6;
 }
 
+
+.cancelIcon{
+  height: 35px !important;
+    width: 40px !important;
+}
+
+
 /* media queries */
 @media screen and (max-width: 860px) {
   .container {

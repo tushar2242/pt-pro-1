@@ -278,20 +278,31 @@ GENERAL
   background-color: #fff2f2;
 }
 
-.table-row-input{
+.table-row-input {
   max-width: 300px;
-  width:100%;
-}
-
-.table-row-input input{
   width: 100%;
 }
 
-.new-row{
-  padding: 5px !important;
-    width: 80px;
-    font-size: .8rem;
+.table-row-input input {
+  width: 100%;
 }
+
+.new-row {
+  padding: 5px !important;
+  width: 65px;
+  height: 30px;
+  font-size: 0.68rem;
+}
+
+
+@media (min-width:550px) {
+  .table-row-input input {
+    padding: 10px 15px;
+  }
+}
+
+
+
 
 
 /* @media screen and (max-width: 991px) {

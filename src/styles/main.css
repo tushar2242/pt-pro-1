@@ -199,4 +199,5 @@ input[type=number] {
     color: #223964;
     cursor: pointer;
     padding: 5px;
+    user-select: none;
 }

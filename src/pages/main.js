@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Siderbar from "../helpers/siderbar";
+import Siderbar, { ContextMenu } from "../helpers/siderbar";
 
 
 const Main = () => {
@@ -16,7 +16,7 @@ const Main = () => {
                 <ItemCard />
                 <ItemCard />
             </div>
-            {/* <ContextMenu /> */}
+            <ContextMenu />
         </>
     )
 }

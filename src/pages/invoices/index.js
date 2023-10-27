@@ -56,7 +56,7 @@ const InvoiceData = () => {
                                     <div className='' style={{ position: 'absolute', right: '20px', top: '20px' }} onClick={() => {
                                         route.push('/main')
                                     }}>
-                                        <div className="btn btn-primary iconOuter"  >
+                                        <div className="btn btn-primary iconOuter cancelIcon"  >
                                             <i class="fa-solid fa-xmark"></i>
                                         </div>
                                     </div>
