@@ -33,14 +33,12 @@ const Siderbar = ({ children }) => {
                             </div>
 
                             <a className="navbar-brand-user text-primary mr-0">
-                                <i className="fa-solid fa-user-large" onClick={() => { setProfile(!openProfile) }} style={{ cursor: "pointer" }}></i>
+                            <button className="btn btn-primary login-btn" type="submit" onClick={()=>{
+                                route.push('/main')
+                            }}>Home</button>
+
                             </a>
-                            {openProfile &&
-                                <div className="more-profile">
-                                    <li>More Info </li>
-                                    <li>Login</li>
-                                </div>
-                            }
+                           
 
                         </div>
                     </nav>
@@ -62,8 +60,7 @@ const Siderbar = ({ children }) => {
                                 <li className="sd-link" onClick={() => handleRoutePage('/item')}>Item List</li>
                                 <li className="sd-link" onClick={() => handleRoutePage('/supplier')}>Supplier List</li>
                                 <li className="sd-link" onClick={() => handleRoutePage('/customer')}>Customer List</li>
-                                {/* <li className="sd-link" >Item 4</li>
-                                <li className="sd-link" >Item 5</li> */}
+
 
                             </ul>
                         </div>
@@ -73,7 +70,7 @@ const Siderbar = ({ children }) => {
                 {children}
 
             </div>
-            <ContextMenu />
+            {/* <ContextMenu /> */}
         </>
     );
 }
@@ -127,9 +124,9 @@ const ContextMenu = () => {
     return (
         <>
             <div className="menuOuter">
-                <div className="more-menu" onClick={toggleMenu}>
-                    <i className="fa-regular fa-square-plus"></i>
-                </div >
+                <div className="more-menu" onClick={toggleMenu} style={isMenuOpened ? {transform:'rotate(45deg)'} : []}>
+                   {<i class="fa-solid fa-circle-plus"></i>}
+                </div>
 
                 {isMenuOpened && <nav className="more-options">
                     <section>
@@ -154,3 +151,6 @@ const ContextMenu = () => {
         </>
     );
 };
+
+
+export {ContextMenu}

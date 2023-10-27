@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import Siderbar from '../siderbar';
+import Siderbar from '../../helpers/siderbar';
 
 const NewCustomer = () => {
     const [customerData, setCustomerData] = useState({
@@ -37,11 +37,19 @@ const NewCustomer = () => {
                     <h4 className="text-center"></h4>
                     <div className="rown" style={{ overflow: 'hidden' }}>
                         <div className="col-md-12 d-flex flex-column align-items-center justify-content-center">
-                            <div className="card mb-3">
+                            <div className="card mb-3" style={{position:"relative"}}>
                                 <div className="card-body">
                                     <div className="pt pb-2">
                                         <h5 className="card-title text-center pb-0 fs-4">Add New Customer Here</h5>
                                     </div>
+                                    <div className='' style={{ position: 'absolute', right: '20px', top: '20px' }} onClick={() => {
+                                        route.push('/main')
+                                    }}>
+                                        <div className="btn btn-primary iconOuter"  >
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </div>
+                                    </div>
+
                                     <form onSubmit={handleAddCustomer} method="post" className="row g-3 needs-validation">
                                         <div className="col-12">
                                             <label htmlFor="customerName" className="form-label">Customer Name</label>
@@ -127,3 +135,6 @@ const NewCustomer = () => {
 };
 
 export default NewCustomer;
+
+
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import ListDesign from '../../helpers/ListDesign';
 import DataTable from '@/helpers/DataTable';
-import Siderbar from '../siderbar';
+import Siderbar from '../../helpers/siderbar';
 
 const ItemList = () => {
     return (

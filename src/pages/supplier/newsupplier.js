@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import Siderbar from '../siderbar';
+import Siderbar from '../../helpers/siderbar';
 
 const NewSupplier = () => {
     const [formData, setFormData] = useState({
@@ -40,10 +40,17 @@ const NewSupplier = () => {
                 <div className="col-lg-6 itemOuter mt-3">
                     <div className="rown" style={{ overflow: 'hidden' }}>
                         <div className="col-md-12 d-flex flex-column align-items-center justify-content-center">
-                            <div className="card mb-3">
+                            <div className="card mb-3" style={{position:'relative'}}>
                                 <div className="card-body">
                                     <div className="pt pb-2">
-                                        <h5 className="card-title text-center pb-0 fs-4">Add New Supplier Here</h5>
+                                        <h5 className="card-title text-center pb-0 fs-4">Add New Supplier</h5>
+                                    </div>
+                                    <div className='' style={{ position: 'absolute', right: '20px', top: '20px' }} onClick={() => {
+                                        route.push('/main')
+                                    }}>
+                                        <div className="btn btn-primary iconOuter"  >
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </div>
                                     </div>
                                     <form onSubmit={handleAddSupplier} method="post" className="row g-3 needs-validation">
                                         <div className="col-12">

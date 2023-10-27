@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Siderbar from "./siderbar";
+import Siderbar from "../helpers/siderbar";
 
 
 const Main = () => {
