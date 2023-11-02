@@ -91,12 +91,10 @@ const InvoiceData = () => {
 
                                         <DataTable
                                             head={[
-                                                "Items",
-
-                                                "Quantity",
+                                                "Item name",
+                                                "Quant.",
                                                 "Rate",
                                                 "Amount",
-
                                             ]}
                                             title='Customer'
                                         />

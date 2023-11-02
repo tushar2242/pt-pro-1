@@ -5,14 +5,15 @@ GENERAL
 ----------------------------------------------------------*/
 
 .container-1 {
-  display: table;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   color: #252A3B;
   overflow: hidden;
-  background-color: #F8F8F8;
+  background-color: #ffffff;
 
-  padding-inline: 50px;
+  padding-inline: 5px;
 }
 
 
@@ -21,6 +22,10 @@ GENERAL
   font-weight: 400;
   font-size: 20px;
   margin: 0;
+}
+
+.table-container {
+  background-color: white;
 }
 
 .row--top-40 {
@@ -67,6 +72,7 @@ GENERAL
   position: relative;
   line-height: 18px !important;
   border: 0 !important;
+
 }
 
 .table-row__img {
@@ -299,8 +305,26 @@ GENERAL
   .table-row-input input {
     padding: 10px 15px;
   }
+ 
+ 
+
+  /* .table-row__td {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  } */
 }
 
+
+@media (max-width:500px) {
+  .container-1{
+    overflow-x: scroll;
+  }
+  .table-row__info{
+    padding: 0px;
+  }
+}
 
 
 

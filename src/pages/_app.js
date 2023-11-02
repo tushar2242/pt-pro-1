@@ -3,7 +3,8 @@ import '@/styles/login.css';
 import '@/styles/main.css';
 import Head from 'next/head';
 import '@/styles/newitem.css';
-import '@/styles/datatable.css'
+import '@/styles/datatable.css';
+import '@/styles/loader.css';
 
 
 

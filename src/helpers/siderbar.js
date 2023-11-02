@@ -60,7 +60,12 @@ const Siderbar = ({ children }) => {
                                 <li className="sd-link" onClick={() => handleRoutePage('/item')}>Item List</li>
                                 <li className="sd-link" onClick={() => handleRoutePage('/supplier')}>Supplier List</li>
                                 <li className="sd-link" onClick={() => handleRoutePage('/customer')}>Customer List</li>
-
+                                <li className="sd-link" onClick={() => handleRoutePage('/item')}>All Purchase Invoices</li>
+                                <li className="sd-link" onClick={() => handleRoutePage('/supplier')}>All Sales Invoices</li>
+                                <li className="sd-link" onClick={() => handleRoutePage('/customer')}>Customer List</li>
+                                <li className="sd-link" onClick={() => handleRoutePage('/item')}>All Purchase Invoices</li>
+                                <li className="sd-link" onClick={() => handleRoutePage('/supplier')}>All Sales Invoices</li>
+                                <li className="sd-link" onClick={() => handleRoutePage('/customer')}>Customer List</li>
 
                             </ul>
                         </div>
@@ -150,9 +155,10 @@ const ContextMenu = () => {
                         <li onClick={() => handleRoutePage('/supplier/newsupplier')}>Create a New Supplier</li>
                         <li>Create Purchase Invoice</li>
                         <li onClick={() => handleRoutePage('/invoices')}>Create Sales Invoice</li>
-                        <li>Create New Return</li>
-                        <li>All Purchase Invoice</li>
-                        <li>All Sales Invoices</li>
+                        <li  onClick={() => handleRoutePage('/main')}>Main Dashboard</li>
+                        <li  onClick={() => handleRoutePage('/main')}>Sales Dashboard</li>
+                        <li  onClick={() => handleRoutePage('/main')}>Inventory Dashboard</li>
+                        <li  onClick={() => handleRoutePage('/main')}>Inventory Dashboard</li>
                     </section>
 
                 </nav>

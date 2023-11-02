@@ -5,6 +5,7 @@ import Link from 'next/link';
 import logo from '../images/logo.jpg'
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Loader from '../helpers/Loader';
 // import styles from '@/styles/Home.module.css'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -38,6 +39,8 @@ const Login = () => {
 
   const [username, setUsername] = useState('administrator');
   const [password, setPassword] = useState('admin');
+
+  const [isLoad, setLoad] = useState(false)
   const route = useRouter()
 
   async function handleLogin(e) {
@@ -49,22 +52,25 @@ const Login = () => {
 
     try {
       const loginRes = await axios.post(loginurl, formdata, { headers })
+      console.log(loginRes)
 
-      if (loginRes.message === 'Logged In') {
-        route('/main')
+      if (loginRes.data.message === 'Logged In') {
+        setLoad(true)
+        route.push('/main')
       }
     }
     catch (err) {
       console.log(err)
     }
 
-
-
   }
 
 
   return (
     <>
+
+      {isLoad &&
+        <Loader />}
 
       <div className="login-container mt-4">
 
@@ -88,7 +94,7 @@ const Login = () => {
                   <p className="text-center" >Enter your username & password to login</p>
                 </div>
 
-                <form onSubmit={(e) => { handleLogin(e) }} method='post' className="row g-3 needs-validation" >
+                <form onSubmit={handleLogin} method='post' className="row g-3 needs-validation" >
 
                   <div className="col-12">
                     <label htmlFor="yourUsername" className="form-label">Username</label>

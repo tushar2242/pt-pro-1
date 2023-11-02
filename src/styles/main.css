@@ -96,6 +96,11 @@ input[type=number] {
     margin-bottom: 8px;
 }
 
+.sd-body ul li:hover{
+    background-color: #0069d9;
+    color: white;
+}
+
 .sd-body,
 .sd-link {
     display: inline-block;
@@ -161,8 +166,6 @@ input[type=number] {
 .form-control {
     padding: 17px;
 }
-
-
 
 
 
