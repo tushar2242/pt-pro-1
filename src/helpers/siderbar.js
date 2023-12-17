@@ -33,12 +33,12 @@ const Siderbar = ({ children }) => {
                             </div>
 
                             <a className="navbar-brand-user text-primary mr-0">
-                            <button className="btn btn-primary login-btn" type="submit" onClick={()=>{
-                                route.push('/main')
-                            }}>Home</button>
+                                <button className="btn btn-primary login-btn" type="submit" onClick={() => {
+                                    route.push('/main')
+                                }}>Home</button>
 
                             </a>
-                           
+
 
                         </div>
                     </nav>
@@ -57,15 +57,8 @@ const Siderbar = ({ children }) => {
                                         "item 3"
                                     ]}
                                 /> */}
-                                <li className="sd-link" onClick={() => handleRoutePage('/item')}>Item List</li>
-                                <li className="sd-link" onClick={() => handleRoutePage('/supplier')}>Supplier List</li>
-                                <li className="sd-link" onClick={() => handleRoutePage('/customer')}>Customer List</li>
-                                <li className="sd-link" onClick={() => handleRoutePage('/item')}>All Purchase Invoices</li>
-                                <li className="sd-link" onClick={() => handleRoutePage('/supplier')}>All Sales Invoices</li>
-                                <li className="sd-link" onClick={() => handleRoutePage('/customer')}>Customer List</li>
-                                <li className="sd-link" onClick={() => handleRoutePage('/item')}>All Purchase Invoices</li>
-                                <li className="sd-link" onClick={() => handleRoutePage('/supplier')}>All Sales Invoices</li>
-                                <li className="sd-link" onClick={() => handleRoutePage('/customer')}>Customer List</li>
+                                <li className="sd-link" onClick={() => handleRoutePage('/main')}>Main Category List</li>
+                                <li className="sd-link" onClick={() => handleRoutePage('/blog/')}>Blog List</li>
 
                             </ul>
                         </div>
@@ -75,7 +68,7 @@ const Siderbar = ({ children }) => {
                 {children}
 
             </div>
-            {/* <ContextMenu /> */}
+            <ContextMenu />
         </>
     );
 }
@@ -124,47 +117,39 @@ const ContextMenu = () => {
     const handleRoutePage = (link) => {
         route.push(link)
     }
-  // Close the menu when a click occurs outside of it
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-        if (isMenuOpened && !event.target.closest(".menuOuter")) {
-            setIsMenuOpened(false);
-        }
-    };
+    // Close the menu when a click occurs outside of it
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (isMenuOpened && !event.target.closest(".menuOuter")) {
+                setIsMenuOpened(false);
+            }
+        };
 
-    document.addEventListener("click", handleClickOutside);
+        document.addEventListener("click", handleClickOutside);
 
-    return () => {
-        document.removeEventListener("click", handleClickOutside);
-    };
-}, [isMenuOpened]);
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [isMenuOpened]);
 
     return (
         <>
             <div className="menuOuter">
-                <div className="more-menu" onClick={toggleMenu} style={isMenuOpened ? {transform:'rotate(45deg)'} : []}>
-                   {<i class="fa-solid fa-circle-plus"></i>}
+                <div className="more-menu" onClick={toggleMenu} style={isMenuOpened ? { transform: 'rotate(45deg)' } : []}>
+                    {<i className="fa-solid fa-circle-plus"></i>}
                 </div>
 
                 {isMenuOpened && <nav className="more-options">
                     <section>
-                        <li onClick={() => handleRoutePage('/customer/new-customer')}>Create a New Customer</li>
+                        <li onClick={() => handleRoutePage('/category/new-main-category')}>Create a New Main Category</li>
 
-                        <li onClick={() => handleRoutePage('/item/newitem')}>Create New Item</li>
-                        {/* <li>Create a New Customer</li>   */}
-                        <li onClick={() => handleRoutePage('/supplier/newsupplier')}>Create a New Supplier</li>
-                        <li>Create Purchase Invoice</li>
-                        <li onClick={() => handleRoutePage('/invoices')}>Create Sales Invoice</li>
-                        <li  onClick={() => handleRoutePage('/main')}>Main Dashboard</li>
-                        <li  onClick={() => handleRoutePage('/main')}>Sales Dashboard</li>
-                        <li  onClick={() => handleRoutePage('/main')}>Inventory Dashboard</li>
-                        <li  onClick={() => handleRoutePage('/main')}>Inventory Dashboard</li>
+                        <li onClick={() => handleRoutePage('/blog/new-blog')}>Create New Blog</li>
+
                     </section>
 
                 </nav>
                 }
 
-                {/* <div onClick={handleMenuClicked} className="contextMenu" /> */}
 
 
             </div >
@@ -172,5 +157,3 @@ const ContextMenu = () => {
     );
 };
 
-
-export {ContextMenu}

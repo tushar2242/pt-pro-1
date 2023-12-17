@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from 'react';
-import Link from 'next/link';
 import logo from '../images/logo.jpg'
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -9,12 +8,9 @@ import Loader from '../helpers/Loader';
 // import styles from '@/styles/Home.module.css'
 
 // const inter = Inter({ subsets: ['latin'] })
+var url = process.env.PUBLIC_URL
 
-const loginurl = 'https://tgc67.online/api/method/login';
 
-const headers = {
-  "Content-Type": "multipart/form-data",
-};
 
 
 
@@ -37,26 +33,30 @@ export default function Home() {
 
 const Login = () => {
 
-  const [username, setUsername] = useState('administrator');
-  const [password, setPassword] = useState('admin');
+  const [username, setUsername] = useState('alok.sahu@newworldtrending.com');
+  const [password, setPassword] = useState('q~y,sc(QQ@nS');
 
   const [isLoad, setLoad] = useState(false)
   const route = useRouter()
 
   async function handleLogin(e) {
     e.preventDefault();
-    const formdata = new FormData()
+    const formdata = {
+      'email':username,
+      'password':password
+    }
 
-    formdata.append('usr', username)
-    formdata.append('pwd', password)
 
     try {
-      const loginRes = await axios.post(loginurl, formdata, { headers })
-      console.log(loginRes)
+      const loginRes = await axios.post('https://api.newworldtrending.com/blog/auth/login', formdata)
+       console.log(loginRes.data)
 
-      if (loginRes.data.message === 'Logged In') {
+      if (loginRes.data.message === 'Login Successful') {
+        // console.log(loginRes)
+        sessionStorage.setItem("email",loginRes.data.userEmail)
+        sessionStorage.setItem("userId",loginRes.data.userId)
         setLoad(true)
-        route.push('/main')
+        route.push('/blog/new-blog')
       }
     }
     catch (err) {
